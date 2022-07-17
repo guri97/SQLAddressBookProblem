@@ -31,3 +31,7 @@ select * from AddressBook;
 ----------------------UC-6----------------------
 --Retrieve person belonging to city or state--
 select * from AddressBook where City = 'Port Blair' or State = 'Andaman And Nicobar Islands'; 
+----------------------UC-7----------------------
+--Size of addressbook--
+select COUNT(*) as StateCount, State from AddressBook group by State;
+select COUNT(*) as StateCount, City from AddressBook group by City;
