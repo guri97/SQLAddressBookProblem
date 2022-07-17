@@ -35,3 +35,6 @@ select * from AddressBook where City = 'Port Blair' or State = 'Andaman And Nico
 --Size of addressbook--
 select COUNT(*) as StateCount, State from AddressBook group by State;
 select COUNT(*) as StateCount, City from AddressBook group by City;
+----------------------UC-8----------------------
+--Sort entries by name alphbatically--
+select * from AddressBook order by FirstName;
