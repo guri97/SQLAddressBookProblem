@@ -20,3 +20,7 @@ values('Gurpreet Singh','Port Blair','Andaman And Nicobar Islands',744101,953182
 ('Vivek','Greater Noida','New Delhi',110001,9645065768,'Vivek5868@gmail.com'),
 ('Gayatri','Port Blair','Andaman And Nicobar Islands',744105,7892100876,'gayatri5869@gmail.com');
 select * from AddressBook;
+----------------------UC-4----------------------
+--edit contact by person's name--
+update AddressBook set PhoneNumber=9645065768 where FirstName='Vivek';
+select * from AddressBook;
