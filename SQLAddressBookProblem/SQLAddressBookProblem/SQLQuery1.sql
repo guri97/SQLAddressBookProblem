@@ -38,3 +38,8 @@ select COUNT(*) as StateCount, City from AddressBook group by City;
 ----------------------UC-8----------------------
 --Sort entries by name alphbatically--
 select * from AddressBook order by FirstName;
+----------------------UC-9----------------------
+--Identify each addressboook with name and type--
+alter table Addressbook add ContactType varchar(100) not null default 'Friend';
+update AddressBook set ContactType = 'Family' where FirstName = 'Vivek';
+select * from AddressBook;
