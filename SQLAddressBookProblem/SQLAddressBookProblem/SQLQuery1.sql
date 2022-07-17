@@ -28,3 +28,6 @@ update AddressBook set PhoneNumber=9645065768 where FirstName='Vivek';
 delete AddressBook where FirstName='Gayatri';
 select * from AddressBook;
 select * from AddressBook;
+----------------------UC-6----------------------
+--Retrieve person belonging to city or state--
+select * from AddressBook where City = 'Port Blair' or State = 'Andaman And Nicobar Islands'; 
