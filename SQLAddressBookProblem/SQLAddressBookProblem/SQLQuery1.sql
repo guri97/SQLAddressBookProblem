@@ -46,3 +46,9 @@ select * from AddressBook;
 ----------------------UC-10----------------------
 --Get contact count by type--
 select COUNT(*) as Type, ContactType from AddressBook group by ContactType;
+----------------------UC-11----------------------
+--Add person to both family and friend--
+insert into AddressBook(FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email,ContactType)
+values('Varsha','Raj','Marine Hill','Port Blair','Andaman And Nicobar Islands',744101,8596325698,'varsharaj5258@gmail.com','Friend'),
+('Amardeep','Kaur','Aberdeen Bazar','Port Blair','Andaman And Nicobar Islands',744105,5874693652,'kaur52869@gmail.com','Family');
+select * from AddressBook;
