@@ -84,3 +84,24 @@ constraint FullAddress_foreign_Key_ID foreign key(ID) references AddressBook(ID)
 insert into FullAddress select ID,Address,City,State,Zip from AddressBook;
 select * from FullAddress;
 alter table AddressBook drop column Address,City,State,Zip;
+--UC13:Ability to perform the other functionality
+SELECT CITY, COUNT(CITY) AS CITY_COUNT FROM FullAddress,AddressBook where FullAddress.Id=AddressBook.ID GROUP BY City;
+SELECT State, COUNT(State) AS State_COUNT FROM FullAddress,AddressBook where FullAddress.Id=AddressBook.ID GROUP BY State;
+
+
+SELECT Type, COUNT(*) AS TYPE_COUNT FROM ContactType, AddressBook where ContactType.ID = AddressBook.ID GROUP BY Type;
+
+
+select AddressBook.ID,firstName,lastName,Email,PhoneNumber,Address,City,State,zip,Country
+ from AddressBook, ContactType,FullAddress,Country
+where AddressBook.ID = ContactType.ID and
+      AddressBook.ID = FullAddress.ID and
+	  AddressBook.ID = Country.ID; 
+
+use AddressBook;
+select * from AddressBook
+
+select City from FullAddress where ID = (select ID from AddressBook where FirstName = 'Gurpreet')
+select state from FullAddress where ID = (select ID from AddressBook where FirstName = 'Gurpreet')
+
+SELECT * FROM AddressBook ORDER BY FirstName;
