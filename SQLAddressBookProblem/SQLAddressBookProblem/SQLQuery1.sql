@@ -52,3 +52,35 @@ insert into AddressBook(FirstName,LastName,Address,City,State,Zip,PhoneNumber,Em
 values('Varsha','Raj','Marine Hill','Port Blair','Andaman And Nicobar Islands',744101,8596325698,'varsharaj5258@gmail.com','Friend'),
 ('Amardeep','Kaur','Aberdeen Bazar','Port Blair','Andaman And Nicobar Islands',744105,5874693652,'kaur52869@gmail.com','Family');
 select * from AddressBook;
+--UC12:Ability to create ER diagram
+CREATE table ContactType(
+ID		int identity(1, 1),
+Type varchar(20),
+Constraint TypePrimaryKey PRIMARY KEY(ID)
+);
+
+INSERT INTO ContactType select Type from AddressBook ;
+
+select * from ContactType;
+alter table AddressBook drop column Type;
+
+Create table country(
+ID int Identity(1,1),
+Country varchar(20),
+Constraint CountryPrimayKay PRIMARY KEY (ID)
+);
+Insert into country select Country from AddressBook;
+select * from country;
+alter table AddressBook drop column Country;
+
+Create table FullAddress(
+ID int ,
+Address varchar(20),
+City varchar(10),
+State Varchar(20),
+Zip int 
+constraint FullAddress_foreign_Key_ID foreign key(ID) references AddressBook(ID) on delete cascade
+);
+insert into FullAddress select ID,Address,City,State,Zip from AddressBook;
+select * from FullAddress;
+alter table AddressBook drop column Address,City,State,Zip;
